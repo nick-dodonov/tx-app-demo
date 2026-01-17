@@ -1,0 +1,16 @@
+# Bazel
+/bazel-*
+MODULE.bazel.lock
+.*.bazelrc
+/external
+
+# CLion
+/.idea/
+/.clwb/
+
+# OS/caches/temp files
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp
+*.log

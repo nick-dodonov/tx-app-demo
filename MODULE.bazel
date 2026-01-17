@@ -1,0 +1,35 @@
+"""App demo targets module"""
+
+module(
+    name = "tx-app-demo",
+    version = "0.0.0",
+)
+
+bazel_dep(name = "platforms", version = "1.0.0")
+bazel_dep(name = "rules_foreign_cc", version = "0.15.1")
+
+# demo/test deps
+bazel_dep(name = "tx-kit-ext")  # not published in private registry yet
+git_override(
+    module_name = "tx-kit-ext",
+    remote = "https://github.com/nick-dodonov/tx-kit-ext.git",
+    tag = "v/0.2.3",
+)
+
+bazel_dep(name = "tx-pkg-misc")  # not published in private registry yet
+git_override(
+    module_name = "tx-pkg-misc",
+    remote = "https://github.com/nick-dodonov/tx-pkg-misc.git",
+    tag = "v/0.0.2",
+    verbose = True,
+)
+
+bazel_dep(name = "tx-pkg-aux")  # not published in private registry yet
+git_override(
+    module_name = "tx-pkg-aux",
+    remote = "https://github.com/nick-dodonov/tx-pkg-aux.git",
+    tag = "v/0.2.1",
+    verbose = True,
+)
+
+bazel_dep(name = "boost.asio", version = "1.89.0.bcr.1.1-tx.1")  # private registry
