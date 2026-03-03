@@ -35,3 +35,9 @@ git_override(
 )
 
 bazel_dep(name = "boost.asio", version = "1.89.0.bcr.1.1-tx.1")  # private registry
+
+# bazel_dep(name = "rules_python", version = "1.8.4")
+# register_toolchains(
+#     # https://rules-python.readthedocs.io/en/latest/toolchains.html#runtime-environment-toolchain
+#     "@rules_python//python/runtime_env_toolchains:all",
+# )
