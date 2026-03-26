@@ -9,7 +9,16 @@ bazel_dep(name = "apple_support", version = "2.2.0")
 bazel_dep(name = "platforms", version = "1.0.0")
 bazel_dep(name = "rules_foreign_cc", version = "0.15.1")
 bazel_dep(name = "rules_android", version = "0.7.1")
-bazel_dep(name = "emsdk", version = "4.0.17-tx.1")  # private registry
+bazel_dep(name = "emsdk", version = "5.0.4")
+
+# emsdk - fixed 5.0.4 version (latest main changes w/o warnings and cmake issue)
+git_override(
+    module_name = "emsdk",
+    commit = "a491c4092412c9c12d26c572fd2e7ac792e8b733",  # tx/5.0.4
+    remote = "https://github.com/nick-dodonov/emsdk.git",
+    strip_prefix = "bazel",
+    # verbose = True,
+)
 
 # demo/test deps
 bazel_dep(name = "tx-kit-ext")  # not published in private registry yet
